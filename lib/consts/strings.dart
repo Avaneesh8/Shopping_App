@@ -1,0 +1,12 @@
+const appname = "Bazar Blend";
+const appversion = "Version 1.0.0";
+const credits = "@Baaba Devs";
+const email = "Email";
+const emailHint='Emailhint';
+const password="Password";
+const passwordhint="********";
+const forgetpass="Forget Password";
+const login="Log In";
+const signup="Sign up";
+const createNewAccount = "or,Create a new account ";
+const loginWith ="Log in With";
