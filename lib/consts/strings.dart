@@ -1,8 +1,8 @@
-const appname = "Bazar Blend";
+const appname = "Bazaar Blend";
 const appversion = "Version 1.0.0";
-const credits = "@Baaba Devs";
+const credits = "Avaneesh Maheshwari";
 const email = "Email";
-const emailHint='Emailhint';
+const emailHint='Email Hint';
 const password="Password";
 const passwordhint="********";
 const forgetpass="Forget Password";
