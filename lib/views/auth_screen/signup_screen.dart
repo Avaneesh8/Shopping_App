@@ -1,4 +1,6 @@
 import 'package:bazaarblend/consts/consts.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../consts/lists.dart';
 import '../../widgets_common/applogo_widget.dart';
@@ -18,46 +20,98 @@ class _SignupscreenState extends State<Signupscreen> {
   Widget build(BuildContext context) {
     return bgWidget(
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: Center(
-            child: Column(
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: Column(
+          children: [
+            (context.screenHeight * .10).heightBox,
+            applogoWidget(),
+            10.heightBox,
+            "Join the $appname".text.fontFamily(bold).white.size(18).make(),
+            15.heightBox,
+            Column(
               children: [
-                (context.screenHeight * .10).heightBox,
-                applogoWidget(),
-                10.heightBox,
-                "Join the $appname".text.fontFamily(bold).white.size(18).make(),
-                15.heightBox,
-                Column(
-                  children: [
-                    customTextField(name,namehint),
-                    customTextField(email, emailHint),
-                    customTextField(password, passwordhint),
-                    Align(
-                        alignment: Alignment.bottomRight,
-                        child: TextButton(
-                            onPressed: () {}, child: forgetpass.text.make())),
-                    5.heightBox,
-                    ourbutton(onPress: (){}, color: redColor, textcolor: whiteColor, title: login).box.width(context.screenWidth-50).make(),
-                    5.heightBox,
-                    createNewAccount.text.color(fontGrey).make(),
-                    5.heightBox,
-                    ourbutton(onPress: (){}, color: lightgolden, textcolor: redColor, title: signup).box.width(context.screenWidth-50).make(),
-
-                    10.heightBox,
-                    loginWith.text.color(fontGrey).make(),
-                    5.heightBox,
-
-                  ],
-                )
+                customTextField(name, namehint),
+                customTextField(email, emailHint),
+                customTextField(password, passwordhint),
+                customTextField(retypePassword, passwordhint),
+                Align(
+                    alignment: Alignment.bottomRight,
+                    child: TextButton(
+                        onPressed: () {}, child: forgetpass.text.make())),
+                5.heightBox,
+                Row(children: [
+                  Checkbox(
+                      checkColor: redColor,
+                      value: false,
+                      onChanged: (newValue) {}),
+                  10.widthBox,
+                  Expanded(
+                    child: RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: "I agree to the ",
+                            style: TextStyle(
+                              fontFamily: bold,
+                              color: fontGrey,
+                            )),
+                        TextSpan(
+                            text: termandcond,
+                            style: TextStyle(
+                              fontFamily: bold,
+                              color: redColor,
+                            )),
+                        TextSpan(
+                            text: " & ",
+                            style: TextStyle(
+                              fontFamily: bold,
+                              color: fontGrey,
+                            )),
+                        TextSpan(
+                            text: privacyPolicy,
+                            style: TextStyle(
+                              fontFamily: bold,
+                              color: redColor,
+                            )),
+                      ]),
+                    ),
+                  ),
+                ]),
+                ourbutton(
+                        onPress: () {},
+                        color: redColor,
+                        textcolor: whiteColor,
+                        title: signup)
                     .box
-                    .white
-                    .rounded
-                    .padding(const EdgeInsets.all(16))
-                    .width(context.screenWidth - 70)
+                    .width(context.screenWidth - 50)
                     .make(),
+                10.heightBox,
+                RichText(
+                    text: TextSpan(children: [
+                  TextSpan(
+                    text: alreadyhaveanaccount,
+                    style: TextStyle(fontFamily: bold, color: fontGrey),
+                  ),
+                  TextSpan(
+                    text: login,
+                    style: TextStyle(fontFamily: bold, color: redColor),
+                  )
+                ]
+                    )
+                ).onTap(() {
+                  Get.back();
+                })
               ],
-            ),
-          ),
-        ));
+            )
+                .box
+                .white
+                .rounded
+                .padding(const EdgeInsets.all(16))
+                .width(context.screenWidth - 70)
+                .make(),
+          ],
+        ),
+      ),
+    ));
   }
 }
