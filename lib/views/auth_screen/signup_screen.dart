@@ -16,6 +16,8 @@ class Signupscreen extends StatefulWidget {
 }
 
 class _SignupscreenState extends State<Signupscreen> {
+  bool? isCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return bgWidget(
@@ -42,9 +44,15 @@ class _SignupscreenState extends State<Signupscreen> {
                 5.heightBox,
                 Row(children: [
                   Checkbox(
-                      checkColor: redColor,
-                      value: false,
-                      onChanged: (newValue) {}),
+                      activeColor: redColor,
+                      checkColor: whiteColor,
+                      value: isCheck,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isCheck= newValue;
+                        });
+
+                      }),
                   10.widthBox,
                   Expanded(
                     child: RichText(
@@ -52,25 +60,25 @@ class _SignupscreenState extends State<Signupscreen> {
                         TextSpan(
                             text: "I agree to the ",
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: fontGrey,
                             )),
                         TextSpan(
                             text: termandcond,
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: redColor,
                             )),
                         TextSpan(
                             text: " & ",
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: fontGrey,
                             )),
                         TextSpan(
                             text: privacyPolicy,
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: redColor,
                             )),
                       ]),
@@ -79,7 +87,7 @@ class _SignupscreenState extends State<Signupscreen> {
                 ]),
                 ourbutton(
                         onPress: () {},
-                        color: redColor,
+                        color: isCheck == true ? redColor : lightGrey,
                         textcolor: whiteColor,
                         title: signup)
                     .box
