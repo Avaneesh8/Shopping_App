@@ -1,7 +1,7 @@
 import 'package:bazaarblend/consts/consts.dart';
 import 'package:bazaarblend/consts/lists.dart';
 import 'package:bazaarblend/consts/strings.dart';
-import 'package:bazaarblend/views/auth_screen/home_screen.dart';
+import 'package:bazaarblend/views/home_screen/home.dart';
 import 'package:bazaarblend/views/auth_screen/signup_screen.dart';
 import 'package:bazaarblend/widgets_common/applogo_widget.dart';
 import 'package:bazaarblend/widgets_common/bg_widget.dart';
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {}, child: forgetpass.text.make())),
                 5.heightBox,
                 ourbutton(onPress: (){
-                  Get.to(()=>HomeScreen());
+                  Get.to(()=>Home());
                 }, color: redColor, textcolor: whiteColor, title: login).box.width(context.screenWidth-50).make(),
                 5.heightBox,
                 createNewAccount.text.color(fontGrey).make(),

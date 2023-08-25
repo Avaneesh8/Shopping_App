@@ -1,11 +1,15 @@
 import 'package:bazaarblend/consts/consts.dart';
 import 'package:bazaarblend/controllers/home_controller.dart';
+import 'package:bazaarblend/views/cart_screen/cart_screen.dart';
+import 'package:bazaarblend/views/category_screen/category_screen.dart';
+import 'package:bazaarblend/views/home_screen/home_screen.dart';
+import 'package:bazaarblend/views/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +44,10 @@ class HomeScreen extends StatelessWidget {
     ];
 
     var navBody = [
-      Container(
-        color: Colors.blue,
-      ),
-      Container(
-        color: Colors.amber,
-      ),
-      Container(
-        color: Colors.purple,
-      ),
-      Container(
-        color: Colors.cyan,
-      ),
+      const HomeScreen(),
+      const CategoryScreen(),
+      const CartScreen(),
+      const ProfileScreen(),
     ];
 
     return Scaffold(

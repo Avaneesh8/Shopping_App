@@ -24,3 +24,21 @@ const categories="Categories";
 const cart="Cart";
 const account="Account";
 
+//Home Screen String
+const searchanything="Search anything....";
+const todayDeal="Today's Deal";
+const flashsale="Flash Sale";
+const topSeller="Top Seller";
+const brand="Brand";
+const topcategories="Top Categories";
+const featuredCategories="Featured Categories";
+
+
+const womendress="Women Dress";
+const girlswatches="Girls Watches";
+const mobilePhone="Mobile Phone";
+const boysGlasses="Boys Glasses";
+const tshirts="T Shirts";
+const girlsDress="Girls Dress";
+
+
