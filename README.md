@@ -1,6 +1,6 @@
 # bazaarblend
 
-A new Flutter project.
+It's is a shopping application made to make shopping easier.
 
 ## Getting Started
 
